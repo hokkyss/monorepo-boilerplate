@@ -1,24 +1,21 @@
 const { resolve } = require('node:path');
-
 const project = resolve(process.cwd(), 'tsconfig.json');
 
 /** @type {import("eslint").Linter.Config} */
 module.exports = {
   extends: [
-    require.resolve('@vercel/style-guide/eslint/next'),
+    require.resolve('eslint-config-turbo'),
     require.resolve('./library'),
-    require.resolve('./react'),
     require.resolve('./react-test'),
   ],
+  plugins: [],
   globals: {
     React: true,
     JSX: true,
   },
   env: {
-    node: true,
     browser: true,
   },
-  plugins: [],
   settings: {
     'import/resolver': {
       typescript: {
@@ -30,10 +27,16 @@ module.exports = {
     // Ignore dotfiles
     '.*.js',
     'node_modules/',
+    'dist/',
   ],
   overrides: [
+    // Force ESLint to detect .tsx files
     {
-      files: ['*.js?(x)', '*.ts?(x)'],
+      files: ['*.jsx', '*.tsx'],
+      extends: [
+        require.resolve('@vercel/style-guide/eslint/react'),
+        'alloy/react',
+      ],
     },
   ],
 };

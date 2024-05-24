@@ -1,19 +1,38 @@
 {
-  "name": "@repo/ui",
+  "name": "@monorepo/ui",
   "version": "0.0.0",
   "private": true,
   "exports": {
-    "./button": "./src/button.tsx",
-    "./card": "./src/card.tsx",
-    "./code": "./src/code.tsx"
+    "./button": {
+      "production": {
+        "types": "./dist/button.d.ts",
+        "default": "./dist/button.js"
+      },
+      "default": "./src/button.tsx"
+    },
+    "./card": {
+      "production": {
+        "types": "./dist/card.d.ts",
+        "default": "./dist/card.js"
+      },
+      "default": "./src/card.tsx"
+    },
+    "./code": {
+      "production": {
+        "types": "./dist/code.d.ts",
+        "default": "./dist/code.js"
+      },
+      "default": "./src/code.tsx"
+    }
   },
   "scripts": {
     "lint": "eslint . --max-warnings 0",
-    "generate:component": "turbo gen react-component"
+    "generate:component": "turbo gen react-component",
+    "build": "tsc"
   },
   "devDependencies": {
-    "@repo/eslint-config": "workspace:*",
-    "@repo/typescript-config": "workspace:*",
+    "@monorepo/eslint-config": "workspace:*",
+    "@monorepo/typescript-config": "workspace:*",
     "@turbo/gen": "^1.12.4",
     "@types/eslint": "^8.56.5",
     "@types/node": "^20.11.24",

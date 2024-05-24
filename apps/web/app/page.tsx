@@ -1,17 +1,18 @@
+import Button from "@monorepo/ui/button";
+import Card from "@monorepo/ui/card";
+import Code from "@monorepo/ui/code";
 import Image from "next/image";
-import { Card } from "@repo/ui/card";
-import { Code } from "@repo/ui/code";
+
 import styles from "./page.module.css";
-import { Button } from "@repo/ui/button";
 
 function Gradient({
-  conic,
   className,
+  conic,
   small,
 }: {
-  small?: boolean;
-  conic?: boolean;
   className?: string;
+  conic?: boolean;
+  small?: boolean;
 }): JSX.Element {
   return (
     <span
@@ -29,25 +30,25 @@ function Gradient({
 
 const LINKS = [
   {
-    title: "Docs",
-    href: "https://turbo.build/repo/docs",
     description: "Find in-depth information about Turborepo features and API.",
+    href: "https://turbo.build/repo/docs",
+    title: "Docs",
   },
   {
-    title: "Learn",
-    href: "https://turbo.build/repo/docs/handbook",
     description: "Learn more about monorepos with our handbook.",
+    href: "https://turbo.build/repo/docs/handbook",
+    title: "Learn",
   },
   {
-    title: "Templates",
-    href: "https://turbo.build/repo/docs/getting-started/from-example",
     description: "Choose from over 15 examples and deploy with a single click.",
+    href: "https://turbo.build/repo/docs/getting-started/from-example",
+    title: "Templates",
   },
   {
-    title: "Deploy",
-    href: "https://vercel.com/new",
     description:
       "Instantly deploy your Turborepo to a shareable URL with Vercel.",
+    href: "https://vercel.com/new",
+    title: "Deploy",
   },
 ];
 
@@ -90,8 +91,8 @@ export default function Page(): JSX.Element {
                 alt=""
                 height={614}
                 src="circles.svg"
-                width={614}
                 style={{ pointerEvents: "none" }}
+                width={614}
               />
             </div>
             <div className={styles.logoGradientContainer}>
@@ -104,8 +105,8 @@ export default function Page(): JSX.Element {
                 height={120}
                 priority
                 src="turborepo.svg"
-                width={120}
                 style={{ pointerEvents: "none" }}
+                width={120}
               />
             </div>
           </div>
@@ -133,7 +134,7 @@ export default function Page(): JSX.Element {
       </div>
 
       <div className={styles.grid}>
-        {LINKS.map(({ title, href, description }) => (
+        {LINKS.map(({ description, href, title }) => (
           <Card className={styles.card} href={href} key={title} title={title}>
             {description}
           </Card>

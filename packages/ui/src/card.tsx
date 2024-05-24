@@ -1,14 +1,13 @@
-export function Card({
-  className,
-  title,
-  children,
-  href,
-}: {
+import type { ReactNode } from "react";
+
+export type CardProps = {
+  children: ReactNode;
   className?: string;
-  title: string;
-  children: React.ReactNode;
   href: string;
-}): JSX.Element {
+  title: string;
+};
+
+export default function Card({ children, className, href, title }: CardProps) {
   return (
     <a
       className={className}

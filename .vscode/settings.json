@@ -1,11 +1,30 @@
 {
+  "eslint.validate": [
+    "typescript",
+    "typescriptreact",
+    "javascript",
+    "javascriptreact",
+    "json",
+    "jsonc",
+    "json5"
+  ],
+  "prettier.documentSelectors": ["**/*.svg"],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "files.eol": "\n",
+  "editor.tabSize": 2,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "search.exclude": {
     "**/.yarn": true,
     "**/.pnp.*": true
   },
-  "eslint.nodePath": ".yarn/sdks",
-  "prettier.prettierPath": ".yarn/sdks/prettier/index.cjs",
-  "typescript.tsdk": ".yarn/sdks/typescript/lib",
+  // "eslint.nodePath": ".yarn/sdks",
+  // "prettier.prettierPath": ".yarn/sdks/prettier/index.cjs",
+  // "typescript.tsdk": ".yarn/sdks/typescript/lib",
   "typescript.enablePromptUseWorkspaceTsdk": true,
   "typescript.tsserver.experimental.useVsCodeWatcher": false // NOTE: else won't work with pnp
 }
