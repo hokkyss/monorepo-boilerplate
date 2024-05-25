@@ -3,6 +3,8 @@
     "@monorepo/eslint-config": "workspace:*",
     "@monorepo/typescript-config": "workspace:*",
     "eslint": "^8.57.0",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.4",
     "prettier": "^3.2.5",
     "turbo": "latest",
     "typescript": "^5.4.5"
@@ -17,7 +19,8 @@
     "build": "turbo build",
     "dev": "turbo dev",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "lint": "turbo lint"
+    "lint": "turbo lint",
+    "postinstall": "husky install"
   },
   "workspaces": [
     "apps/*",

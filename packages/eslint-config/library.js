@@ -4,7 +4,11 @@ const project = resolve(process.cwd(), 'tsconfig.json');
 
 /** @type {import("eslint").Linter.Config} */
 module.exports = {
-  extends: ['eslint:recommended', require.resolve('eslint-config-turbo')],
+  extends: [
+    'eslint:recommended',
+    require.resolve('eslint-config-turbo'),
+    require.resolve('./json'),
+  ],
   globals: {
     React: true,
     JSX: true,
@@ -28,19 +32,19 @@ module.exports = {
   overrides: [
     {
       files: ['*'],
-      extends: ['prettier'],
+      extends: ['alloy', 'prettier'],
       plugins: ['prettier'],
       rules: {
         'prettier/prettier': 'error',
+        'no-console': 'error',
+        'object-shorthand': 'error',
       },
     },
     {
-      files: ['*.js?(x)', '*.ts?(x)'],
-      extends: ['alloy', 'plugin:perfectionist/recommended-natural'],
+      files: ['*.[jt]s?(x)'],
+      extends: ['plugin:perfectionist/recommended-natural'],
       plugins: ['unused-imports'],
       rules: {
-        'no-console': 'error',
-        'object-shorthand': 'error',
         'perfectionist/sort-classes': 'off',
         'perfectionist/sort-imports': [
           'error',
@@ -71,7 +75,7 @@ module.exports = {
       files: ['*.ts?(x)'],
       parser: '@typescript-eslint/parser',
       extends: [
-        'alloy',
+        require.resolve('@vercel/style-guide/eslint/typescript'),
         'alloy/typescript',
         'plugin:@typescript-eslint/stylistic-type-checked',
       ],

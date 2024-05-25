@@ -5,6 +5,7 @@ const project = resolve(process.cwd(), 'tsconfig.json');
 module.exports = {
   extends: [
     require.resolve('eslint-config-turbo'),
+    require.resolve('./json'),
     require.resolve('./library'),
     require.resolve('./react-test'),
   ],
@@ -30,9 +31,8 @@ module.exports = {
     'dist/',
   ],
   overrides: [
-    // Force ESLint to detect .tsx files
     {
-      files: ['*.jsx', '*.tsx'],
+      files: ['*.[tj]sx'],
       extends: [
         require.resolve('@vercel/style-guide/eslint/react'),
         'alloy/react',
@@ -40,3 +40,5 @@ module.exports = {
     },
   ],
 };
+
+require('eslint-config-alloy/react');

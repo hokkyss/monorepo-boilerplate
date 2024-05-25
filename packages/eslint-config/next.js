@@ -6,6 +6,7 @@ const project = resolve(process.cwd(), 'tsconfig.json');
 module.exports = {
   extends: [
     require.resolve('@vercel/style-guide/eslint/next'),
+    require.resolve('./json'),
     require.resolve('./library'),
     require.resolve('./react'),
     require.resolve('./react-test'),
@@ -30,10 +31,5 @@ module.exports = {
     // Ignore dotfiles
     '.*.js',
     'node_modules/',
-  ],
-  overrides: [
-    {
-      files: ['*.js?(x)', '*.ts?(x)'],
-    },
   ],
 };

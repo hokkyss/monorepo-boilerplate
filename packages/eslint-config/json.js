@@ -11,5 +11,11 @@ module.exports = {
         'jsonc/sort-keys': 'error',
       },
     },
+    {
+      files: ['package.json'],
+      rules: {
+        'jsonc/sort-keys': 'off',
+      },
+    },
   ],
 };
