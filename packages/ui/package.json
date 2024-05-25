@@ -90,7 +90,7 @@
   "scripts": {
     "build": "tsc",
     "generate:component": "turbo gen react-component",
-    "lint": "eslint . --max-warnings 0",
+    "lint": "eslint . --max-warnings 0 --report-unused-disable-directives",
     "test": ""
   },
   "dependencies": {

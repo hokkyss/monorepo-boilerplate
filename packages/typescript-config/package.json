@@ -4,7 +4,7 @@
   "private": true,
   "license": "MIT",
   "scripts": {
-    "lint": "eslint . --max-warnings 0"
+    "lint": "eslint . --max-warnings 0 --report-unused-disable-directives"
   },
   "devDependencies": {
     "eslint": "^8.57.0"
