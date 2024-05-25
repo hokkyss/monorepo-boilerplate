@@ -15,6 +15,7 @@ module.exports = {
       files: ['package.json'],
       rules: {
         'jsonc/sort-keys': 'off',
+        'jsonc/no-comments': 'off',
       },
     },
   ],

@@ -1,19 +1,11 @@
-import Button from "@monorepo/ui/button";
-import Card from "@monorepo/ui/card";
-import Code from "@monorepo/ui/code";
-import Image from "next/image";
+import Button from '@monorepo/ui/button';
+import Card from '@monorepo/ui/card';
+import Code from '@monorepo/ui/code';
+import Image from 'next/image';
 
-import styles from "./page.module.css";
+import styles from './page.module.css';
 
-function Gradient({
-  className,
-  conic,
-  small,
-}: {
-  className?: string;
-  conic?: boolean;
-  small?: boolean;
-}): JSX.Element {
+function Gradient({ className, conic, small }: { className?: string; conic?: boolean; small?: boolean }): JSX.Element {
   return (
     <span
       className={[
@@ -23,32 +15,31 @@ function Gradient({
         className,
       ]
         .filter(Boolean)
-        .join(" ")}
+        .join(' ')}
     />
   );
 }
 
 const LINKS = [
   {
-    description: "Find in-depth information about Turborepo features and API.",
-    href: "https://turbo.build/repo/docs",
-    title: "Docs",
+    description: 'Find in-depth information about Turborepo features and API.',
+    href: 'https://turbo.build/repo/docs',
+    title: 'Docs',
   },
   {
-    description: "Learn more about monorepos with our handbook.",
-    href: "https://turbo.build/repo/docs/handbook",
-    title: "Learn",
+    description: 'Learn more about monorepos with our handbook.',
+    href: 'https://turbo.build/repo/docs/handbook',
+    title: 'Learn',
   },
   {
-    description: "Choose from over 15 examples and deploy with a single click.",
-    href: "https://turbo.build/repo/docs/getting-started/from-example",
-    title: "Templates",
+    description: 'Choose from over 15 examples and deploy with a single click.',
+    href: 'https://turbo.build/repo/docs/getting-started/from-example',
+    title: 'Templates',
   },
   {
-    description:
-      "Instantly deploy your Turborepo to a shareable URL with Vercel.",
-    href: "https://vercel.com/new",
-    title: "Deploy",
+    description: 'Instantly deploy your Turborepo to a shareable URL with Vercel.',
+    href: 'https://vercel.com/new',
+    title: 'Deploy',
   },
 ];
 
@@ -66,15 +57,8 @@ export default function Page(): JSX.Element {
             rel="noopener noreferrer"
             target="_blank"
           >
-            By{" "}
-            <Image
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              height={24}
-              priority
-              src="/vercel.svg"
-              width={100}
-            />
+            By{' '}
+            <Image alt="Vercel Logo" className={styles.vercelLogo} height={24} priority src="/vercel.svg" width={100} />
           </a>
         </div>
       </div>
@@ -87,13 +71,7 @@ export default function Page(): JSX.Element {
         <div className={styles.heroContent}>
           <div className={styles.logos}>
             <div className={styles.circles}>
-              <Image
-                alt=""
-                height={614}
-                src="circles.svg"
-                style={{ pointerEvents: "none" }}
-                width={614}
-              />
+              <Image alt="" height={614} src="circles.svg" style={{ pointerEvents: 'none' }} width={614} />
             </div>
             <div className={styles.logoGradientContainer}>
               <Gradient className={styles.logoGradient} conic small />
@@ -105,7 +83,7 @@ export default function Page(): JSX.Element {
                 height={120}
                 priority
                 src="turborepo.svg"
-                style={{ pointerEvents: "none" }}
+                style={{ pointerEvents: 'none' }}
                 width={120}
               />
             </div>

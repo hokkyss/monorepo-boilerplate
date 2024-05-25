@@ -2,13 +2,11 @@ const { resolve } = require('node:path');
 
 const project = resolve(process.cwd(), 'tsconfig.json');
 
+const prettierConfig = require('./prettier.config');
+
 /** @type {import("eslint").Linter.Config} */
 module.exports = {
-  extends: [
-    'eslint:recommended',
-    require.resolve('eslint-config-turbo'),
-    require.resolve('./json'),
-  ],
+  extends: ['eslint:recommended', require.resolve('eslint-config-turbo')],
   globals: {
     React: true,
     JSX: true,
@@ -35,7 +33,7 @@ module.exports = {
       extends: ['alloy', 'prettier'],
       plugins: ['prettier'],
       rules: {
-        'prettier/prettier': 'error',
+        'prettier/prettier': ['error', prettierConfig, { usePrettierrc: false }],
         'no-console': 'error',
         'object-shorthand': 'error',
       },
@@ -66,10 +64,6 @@ module.exports = {
         'unused-imports/no-unused-imports': 'error',
         'unused-imports/no-unused-vars': 'error',
       },
-    },
-    {
-      files: ['*.js?(x)'],
-      extends: ['alloy'],
     },
     {
       files: ['*.ts?(x)'],

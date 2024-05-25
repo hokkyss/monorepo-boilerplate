@@ -462,6 +462,8 @@ __metadata:
 "@monorepo/typescript-config@workspace:*, @monorepo/typescript-config@workspace:packages/typescript-config":
   version: 0.0.0-use.local
   resolution: "@monorepo/typescript-config@workspace:packages/typescript-config"
+  dependencies:
+    eslint: "npm:^8.57.0"
   languageName: unknown
   linkType: soft
 
@@ -473,11 +475,14 @@ __metadata:
     "@monorepo/typescript-config": "workspace:*"
     "@turbo/gen": "npm:^1.12.4"
     "@types/eslint": "npm:^8.56.5"
+    "@types/lodash": "npm:^4"
     "@types/node": "npm:^20.11.24"
     "@types/react": "npm:^18.2.61"
     "@types/react-dom": "npm:^18.2.19"
     eslint: "npm:^8.57.0"
+    lodash: "npm:^4.17.21"
     react: "npm:^18.2.0"
+    shallow-equal: "npm:^3.1.0"
     typescript: "npm:^5.3.3"
   languageName: unknown
   linkType: soft
@@ -761,6 +766,13 @@ __metadata:
   version: 0.0.29
   resolution: "@types/json5@npm:0.0.29"
   checksum: 10c0/6bf5337bc447b706bb5b4431d37686aa2ea6d07cfd6f79cc31de80170d6ff9b1c7384a9c0ccbc45b3f512bae9e9f75c2e12109806a15331dc94e8a8db6dbb4ac
+  languageName: node
+  linkType: hard
+
+"@types/lodash@npm:^4":
+  version: 4.17.4
+  resolution: "@types/lodash@npm:4.17.4"
+  checksum: 10c0/0124c64cb9fe7a0f78b6777955abd05ef0d97844d49118652eae45f8fa57bfb7f5a7a9bccc0b5a84c0a6dc09631042e4590cb665acb9d58dfd5e6543c75341ec
   languageName: node
   linkType: hard
 
@@ -4442,9 +4454,11 @@ __metadata:
   dependencies:
     "@monorepo/eslint-config": "workspace:*"
     "@monorepo/typescript-config": "workspace:*"
+    "@types/lodash": "npm:^4"
     eslint: "npm:^8.57.0"
     husky: "npm:^9.0.11"
     lint-staged: "npm:^15.2.4"
+    lodash: "npm:^4.17.21"
     prettier: "npm:^3.2.5"
     turbo: "npm:latest"
     typescript: "npm:^5.4.5"
@@ -5544,6 +5558,13 @@ __metadata:
     functions-have-names: "npm:^1.2.3"
     has-property-descriptors: "npm:^1.0.2"
   checksum: 10c0/fce59f90696c450a8523e754abb305e2b8c73586452619c2bad5f7bf38c7b6b4651895c9db895679c5bef9554339cf3ef1c329b66ece3eda7255785fbe299316
+  languageName: node
+  linkType: hard
+
+"shallow-equal@npm:^3.1.0":
+  version: 3.1.0
+  resolution: "shallow-equal@npm:3.1.0"
+  checksum: 10c0/57079f8741a86b25229b58b86df5d503414aca324e486ec7ddb2423db65914c80c8282149ef66a6803092847dc0d840da8fc338ea5027bbf4fc877f944df9bf6
   languageName: node
   linkType: hard
 

@@ -1,0 +1,25 @@
+import type {
+  CSSProperties,
+  FunctionComponent,
+  PropsWithChildren,
+} from "react";
+
+export type {{ pascalCase name }}Props = PropsWithChildren<{
+  className?: string;
+  style?: CSSProperties;
+}>;
+
+const {{ pascalCase name }}: FunctionComponent<{{ pascalCase name }}Props> = (props) => {
+  const { children, className, style } = props;
+
+  return (
+    <div className={className} style={style}>
+      <h1>{{ pascalCase name }} Component</h1>
+      {children}
+    </div>
+  );
+};
+
+{{ pascalCase name }}.displayName = "{{ pascalCase name }}";
+
+export default {{ pascalCase name }};

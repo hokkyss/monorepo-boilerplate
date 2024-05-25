@@ -10,8 +10,10 @@
   ],
   "prettier.documentSelectors": ["**/*.svg"],
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit"
+    "source.fixAll": "always",
+    "source.organizeImports": "never"
   },
+  "editor.formatOnSave": true,
   "files.eol": "\n",
   "editor.tabSize": 2,
   "editor.defaultFormatter": "esbenp.prettier-vscode",

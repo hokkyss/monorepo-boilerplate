@@ -3,13 +3,13 @@
   "version": "0.0.0",
   "private": true,
   "license": "MIT",
-  "publishConfig": {
-    "access": "public"
-  },
   "scripts": {
     "lint": "eslint . --max-warnings 0"
   },
   "devDependencies": {
     "eslint": "^8.57.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

@@ -6,7 +6,8 @@
     "library.js",
     "next.js",
     "react.js",
-    "json.js"
+    "json.js",
+    "prettier.config.js"
   ],
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^7.1.0",

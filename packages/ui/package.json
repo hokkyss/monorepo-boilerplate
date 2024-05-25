@@ -5,40 +5,108 @@
   "exports": {
     "./button": {
       "production": {
-        "types": "./dist/button.d.ts",
-        "default": "./dist/button.js"
+        "types": "./dist/button/button.d.ts",
+        "react-server": "./dist/button/button.react-server.js",
+        "default": "./dist/button/button.js"
       },
-      "default": "./src/button.tsx"
+      "react-server": "./src/button/button.react-server.tsx",
+      "default": "./src/button/button.tsx"
     },
     "./card": {
       "production": {
-        "types": "./dist/card.d.ts",
-        "default": "./dist/card.js"
+        "types": "./dist/card/card.d.ts",
+        "react-server": "./dist/card/card.react-server.js",
+        "default": "./dist/card/card.js"
       },
-      "default": "./src/card.tsx"
+      "react-server": "./src/card/card.react-server.tsx",
+      "default": "./src/card/card.tsx"
     },
     "./code": {
       "production": {
-        "types": "./dist/code.d.ts",
-        "default": "./dist/code.js"
+        "types": "./dist/code/code.d.ts",
+        "react-server": "./dist/code/code.react-server.js",
+        "default": "./dist/code/code.js"
       },
-      "default": "./src/code.tsx"
+      "react-server": "./src/code/code.react-server.tsx",
+      "default": "./src/code/code.tsx"
+    },
+    "./shallow-equal": {
+      "production": {
+        "types": "./dist/shallow-equal.d.ts",
+        "default": "./dist/shallow-equal.js"
+      },
+      "default": "./src/shallow-equal/shallow-equal.tsx"
+    },
+    "./use-boolean": {
+      "production": {
+        "types": "./dist/use-boolean.d.ts",
+        "default": "./dist/use-boolean.js"
+      },
+      "default": "./src/use-boolean/use-boolean.tsx"
+    },
+    "./use-interval": {
+      "production": {
+        "types": "./dist/use-interval.d.ts",
+        "default": "./dist/use-interval.js"
+      },
+      "default": "./src/use-interval/use-interval.tsx"
+    },
+    "./use-is-online": {
+      "production": {
+        "types": "./dist/use-is-online.d.ts",
+        "default": "./dist/use-is-online.js"
+      },
+      "default": "./src/use-is-online/use-is-online.tsx"
+    },
+    "./use-merge-ref": {
+      "production": {
+        "types": "./dist/use-merge-ref.d.ts",
+        "default": "./dist/use-merge-ref.js"
+      },
+      "default": "./src/use-merge-ref/use-merge-ref.tsx"
+    },
+    "./use-previous": {
+      "production": {
+        "types": "./dist/use-previous.d.ts",
+        "default": "./dist/use-previous.js"
+      },
+      "default": "./src/use-previous/use-previous.tsx"
+    },
+    "./use-rerender": {
+      "production": {
+        "types": "./dist/use-rerender.d.ts",
+        "default": "./dist/use-rerender.js"
+      },
+      "default": "./src/use-rerender/use-rerender.tsx"
+    },
+    "./use-timeout": {
+      "production": {
+        "types": "./dist/use-timeout.d.ts",
+        "default": "./dist/use-timeout.js"
+      },
+      "default": "./src/use-timeout/use-timeout.tsx"
     }
   },
   "scripts": {
-    "lint": "eslint . --max-warnings 0",
+    "build": "tsc",
     "generate:component": "turbo gen react-component",
-    "build": "tsc"
+    "lint": "eslint . --max-warnings 0",
+    "test": ""
+  },
+  "dependencies": {
+    "shallow-equal": "^3.1.0"
   },
   "devDependencies": {
     "@monorepo/eslint-config": "workspace:*",
     "@monorepo/typescript-config": "workspace:*",
     "@turbo/gen": "^1.12.4",
     "@types/eslint": "^8.56.5",
+    "@types/lodash": "^4",
     "@types/node": "^20.11.24",
     "@types/react": "^18.2.61",
     "@types/react-dom": "^18.2.19",
     "eslint": "^8.57.0",
+    "lodash": "^4.17.21",
     "react": "^18.2.0",
     "typescript": "^5.3.3"
   }

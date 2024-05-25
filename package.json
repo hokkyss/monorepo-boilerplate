@@ -1,4 +1,19 @@
 {
+  "name": "monorepo",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "turbo build",
+    "dev": "turbo dev",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "gen": "turbo gen",
+    "postinstall": "husky install",
+    "lint": "turbo lint",
+    "test": "turbo test"
+  },
   "devDependencies": {
     "@monorepo/eslint-config": "workspace:*",
     "@monorepo/typescript-config": "workspace:*",
@@ -9,21 +24,8 @@
     "turbo": "latest",
     "typescript": "^5.4.5"
   },
+  "packageManager": "yarn@4.2.2",
   "engines": {
     "node": ">=18"
-  },
-  "name": "monorepo",
-  "packageManager": "yarn@4.2.2",
-  "private": true,
-  "scripts": {
-    "build": "turbo build",
-    "dev": "turbo dev",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "lint": "turbo lint",
-    "postinstall": "husky install"
-  },
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ]
+  }
 }

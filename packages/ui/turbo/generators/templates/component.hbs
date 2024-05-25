@@ -1,8 +1,38 @@
-export const {{ pascalCase name }} = ({ children }: { children: React.ReactNode }) => {
-  return (
-    <div>
-      <h1>{{ pascalCase name }} Component</h1>
-      {children}
-    </div>
-  );
-};
+import isEqual from "lodash/isEqual";
+import {
+  type CSSProperties,
+  type PropsWithChildren,
+  forwardRef,
+  memo,
+} from "react";
+
+import shallowEqual from "../shallow-equal/shallow-equal";
+
+export type {{ pascalCase name }}Props = PropsWithChildren<{
+  className?: string;
+  style?: CSSProperties;
+}>;
+
+const {{ pascalCase name }} = memo(
+  forwardRef<HTMLDivElement, {{ pascalCase name }}Props>((props, ref) => {
+    const { children, className, style } = props;
+
+    return (
+      <div className={className} ref={ref} style={style}>
+        <h1>{{ pascalCase name }} Component</h1>
+        {children}
+      </div>
+    );
+  }),
+  ({ style: prevStyle, ...prevProps }, { style: nextStyle, ...nextProps }) => {
+    if (!isEqual(prevStyle, nextStyle)) {
+      return false;
+    }
+
+    return shallowEqual(prevProps, nextProps);
+  },
+);
+
+{{ pascalCase name }}.displayName = "{{ pascalCase name }}";
+
+export default {{ pascalCase name }};
