@@ -2,7 +2,7 @@
   "compilerOptions": {
     "outDir": "dist"
   },
-  "exclude": ["node_modules", "dist"],
+  "exclude": ["node_modules", "dist", "coverage"],
   "extends": "@monorepo/typescript-config/react-library.json",
-  "include": ["src", "turbo", "*.config.mts", "*.config.ts", "*.config.mjs", "*.config.js"]
+  "include": ["src", "turbo", "*.config.mts", "*.config.ts"]
 }

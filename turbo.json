@@ -14,9 +14,10 @@
       "persistent": true
     },
     "lint": {
-      "dependsOn": ["^lint"]
+      "cache": true
     },
     "test": {
+      "cache": true,
       "dotEnv": [".env.test.local", ".env.test", ".env.local", ".env"]
     }
   }

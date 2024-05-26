@@ -1,6 +1,10 @@
+/// <reference types='vitest' />
+
 import { globSync } from 'glob';
 import path from 'path';
 import { defineConfig } from 'vite';
+import { coverageConfigDefaults } from 'vitest/config';
+import dts from 'vite-plugin-dts';
 
 import pkg from './package.json';
 
@@ -10,10 +14,13 @@ export default defineConfig((configEnv) => {
       commonjsOptions: {
         transformMixedEsModules: true,
       },
-      emptyOutDir: false,
+      emptyOutDir: true,
       lib: {
         entry: Object.fromEntries(
-          globSync('./src/**', { nodir: true }).map((file) => {
+          globSync('./src/**', {
+            nodir: true,
+            ignore: ['./src/**/*.{spec,test}.*'],
+          }).map((file) => {
             return [
               // This remove `src/` as well as the file extension from each
               // file, so e.g. src/nested/foo.js becomes nested/foo
@@ -35,7 +42,29 @@ export default defineConfig((configEnv) => {
       },
       sourcemap: true,
     },
-    plugins: [configEnv.command === 'serve' && false /* Use react plugin for development */],
+    plugins: [
+      dts({
+        tsconfigPath: path.resolve(__dirname, 'tsconfig.json'),
+        copyDtsFiles: true,
+        exclude: ['**/*.{spec,test}.*'],
+      }),
+      configEnv.command === 'serve' && false /* Use react plugin for development */,
+    ],
     root: __dirname,
+    test: {
+      clearMocks: true,
+      coverage: {
+        enabled: true,
+        exclude: [...coverageConfigDefaults.exclude, 'src/**/*.{story,stories}.{jsx,tsx,js}'],
+        provider: 'v8',
+        reportsDirectory: 'coverage',
+      },
+      environment: 'happy-dom',
+      globals: true,
+      include: ['src/**/*.{spec,test}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
+      mockReset: true,
+      reporters: ['default'],
+      watch: false,
+    },
   };
 });
