@@ -47,7 +47,7 @@
         "node": "./dist/use-boolean/use-boolean.js",
         "default": "./dist/use-boolean/use-boolean.mjs"
       },
-      "default": "./src/use-boolean/use-boolean.tsx"
+      "default": "./src/use-boolean/use-boolean.ts"
     },
     "./use-interval": {
       "production": {
@@ -55,7 +55,7 @@
         "node": "./dist/use-interval/use-interval.js",
         "default": "./dist/use-interval/use-interval.mjs"
       },
-      "default": "./src/use-interval/use-interval.tsx"
+      "default": "./src/use-interval/use-interval.ts"
     },
     "./use-is-online": {
       "production": {
@@ -63,7 +63,7 @@
         "node": "./dist/use-is-online/use-is-online.js",
         "default": "./dist/use-is-online/use-is-online.mjs"
       },
-      "default": "./src/use-is-online/use-is-online.tsx"
+      "default": "./src/use-is-online/use-is-online.ts"
     },
     "./use-merge-ref": {
       "production": {
@@ -71,7 +71,7 @@
         "node": "./dist/use-merge-ref/use-merge-ref.js",
         "default": "./dist/use-merge-ref/use-merge-ref.mjs"
       },
-      "default": "./src/use-merge-ref/use-merge-ref.tsx"
+      "default": "./src/use-merge-ref/use-merge-ref.ts"
     },
     "./use-previous": {
       "production": {
@@ -79,7 +79,7 @@
         "node": "./dist/use-previous/use-previous.js",
         "default": "./dist/use-previous/use-previous.mjs"
       },
-      "default": "./src/use-previous/use-previous.tsx"
+      "default": "./src/use-previous/use-previous.ts"
     },
     "./use-rerender": {
       "production": {
@@ -87,7 +87,7 @@
         "node": "./dist/use-rerender/use-rerender.js",
         "default": "./dist/use-rerender/use-rerender.mjs"
       },
-      "default": "./src/use-rerender/use-rerender.tsx"
+      "default": "./src/use-rerender/use-rerender.ts"
     },
     "./use-timeout": {
       "production": {
@@ -95,7 +95,7 @@
         "node": "./dist/use-timeout/use-timeout.js",
         "default": "./dist/use-timeout/use-timeout.mjs"
       },
-      "default": "./src/use-timeout/use-timeout.tsx"
+      "default": "./src/use-timeout/use-timeout.ts"
     }
   },
   "scripts": {
