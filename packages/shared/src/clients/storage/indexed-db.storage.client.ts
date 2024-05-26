@@ -5,7 +5,9 @@ export type IndexedDBClientOptions = {
   name: string;
 };
 
-export default function createIndexedDBClient({ name }: IndexedDBClientOptions): IStorageClient {
+export default function createIndexedDBClient(options: IndexedDBClientOptions): IStorageClient {
+  const { name } = options;
+
   function getDb() {
     return new Promise<IDBDatabase>((resolve, reject) => {
       const request = indexedDB.open(name);

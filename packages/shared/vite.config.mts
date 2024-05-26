@@ -38,17 +38,19 @@ export default defineConfig((configEnv) => {
       reportCompressedSize: true,
       rollupOptions: {
         // match @tanstack/react-query and @tanstack/react-query/anything, but not @tanstack/react-query-devtools
-        external: Object.keys(pkg.peerDependencies).map((key) => new RegExp(`^${key}(/.+)*`)),
+        external: Object.keys('peerDependencies' in pkg ? (pkg.peerDependencies as Record<string, string>) : {}).map(
+          (key) => new RegExp(`^${key}(/.+)*`),
+        ),
       },
       sourcemap: true,
     },
     plugins: [
-      dts({
-        copyDtsFiles: true,
-        exclude: ['**/*.{spec,test}.*'],
-        tsconfigPath: path.resolve(__dirname, 'tsconfig.json'),
-      }),
-      configEnv.command === 'serve' && false /* Use react plugin for development */,
+      configEnv.command === 'build' &&
+        dts({
+          copyDtsFiles: true,
+          exclude: ['**/*.{spec,test}.*'],
+          tsconfigPath: path.resolve(__dirname, 'tsconfig.json'),
+        }),
     ],
     root: __dirname,
     test: {

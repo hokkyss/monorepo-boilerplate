@@ -12,6 +12,7 @@
   "dependencies": {
     "@floating-ui/react": "^0.26.16",
     "@hookform/resolvers": "^3.4.2",
+    "@monorepo/shared": "workspace:*",
     "@monorepo/ui": "workspace:*",
     "@tanstack/react-query": "^5.37.1",
     "@tanstack/react-router": "^1.33.8",

@@ -2,7 +2,7 @@ import { HttpResponse, http } from 'msw';
 import { setupServer } from 'msw/node';
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
 
-import FetchHttpClient from './fetch.http.client';
+import createFetchHttpClient from './fetch.http.client';
 
 const server = setupServer(
   http.get('*', () => HttpResponse.json({ method: 'GET' }, { status: 200 })),
@@ -21,7 +21,9 @@ afterAll(() => {
 });
 
 describe('FetchHttpClient', () => {
-  const fetchClient = new FetchHttpClient();
+  const fetchClient = createFetchHttpClient({
+    baseUrl: 'http://localhost:3000',
+  });
 
   it('should call fetch with GET method', async () => {
     const response = await fetchClient.get('https://example.com');

@@ -9,7 +9,7 @@
         "node": "./dist/clients/http/http.client.interface.js",
         "default": "./dist/clients/http/http.client.interface.mjs"
       },
-      "default": "./src/clients/http/http.client.interface"
+      "default": "./src/clients/http/http.client.interface.ts"
     },
     "./http-client/fetch": {
       "production": {
@@ -25,7 +25,7 @@
         "node": "./dist/clients/storage/storage.client.interface.js",
         "default": "./dist/clients/storage/storage.client.interface.mjs"
       },
-      "default": "./src/clients/storage/storage.client.interface"
+      "default": "./src/clients/storage/storage.client.interface.ts"
     },
     "./storage-client/indexed-db": {
       "production": {
@@ -113,6 +113,5 @@
     "vite": "^5.2.11",
     "vite-plugin-dts": "^3.9.1",
     "vitest": "^1.6.0"
-  },
-  "peerDependencies": {}
+  }
 }
