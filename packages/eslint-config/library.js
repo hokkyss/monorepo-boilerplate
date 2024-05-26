@@ -39,7 +39,7 @@ module.exports = {
       },
     },
     {
-      files: ['*.[jt]s?(x)'],
+      files: ['*.?(m)[jt]s?(x)'],
       extends: ['plugin:perfectionist/recommended-natural'],
       plugins: ['unused-imports'],
       rules: {
@@ -66,7 +66,7 @@ module.exports = {
       },
     },
     {
-      files: ['*.ts?(x)'],
+      files: ['*.?(m)ts?(x)'],
       parser: '@typescript-eslint/parser',
       extends: [
         require.resolve('@vercel/style-guide/eslint/typescript'),

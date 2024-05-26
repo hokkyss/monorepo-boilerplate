@@ -27,7 +27,7 @@ module.exports = {
   ],
   overrides: [
     {
-      files: ['*.[tj]s?(x)'],
+      files: ['*.?(m)[tj]s?(x)'],
       extends: [require.resolve('@vercel/style-guide/eslint/react'), 'alloy/react'],
     },
   ],

@@ -3,7 +3,7 @@ module.exports = {
   overrides: [
     {
       extends: ['plugin:testing-library/react'],
-      files: ['*.(spec|test).[tj]s?(x)'],
+      files: ['*.(spec|test).?(m)[tj]s?(x)'],
       plugins: ['testing-library'],
     },
   ],

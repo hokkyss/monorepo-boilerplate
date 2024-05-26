@@ -13,6 +13,6 @@
     "target": "ESNext",
     "useDefineForClassFields": true
   },
-  "display": "Vite (React)",
-  "extends": ["./react-library.json"]
+  "display": "Vite (Default)",
+  "extends": ["./base.json"]
 }

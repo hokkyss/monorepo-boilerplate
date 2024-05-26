@@ -1,0 +1,118 @@
+{
+  "name": "@monorepo/shared",
+  "version": "0.0.0",
+  "private": true,
+  "exports": {
+    "./http-client": {
+      "production": {
+        "types": "./dist/clients/http/http.client.interface.d.ts",
+        "node": "./dist/clients/http/http.client.interface.js",
+        "default": "./dist/clients/http/http.client.interface.mjs"
+      },
+      "default": "./src/clients/http/http.client.interface"
+    },
+    "./http-client/fetch": {
+      "production": {
+        "types": "./dist/clients/http/fetch.http.client.d.ts",
+        "node": "./dist/clients/http/fetch.http.client.js",
+        "default": "./dist/clients/http/fetch.http.client.mjs"
+      },
+      "default": "./src/clients/http/fetch.http.client.ts"
+    },
+    "./storage-client": {
+      "production": {
+        "types": "./dist/clients/storage/storage.client.interface.d.ts",
+        "node": "./dist/clients/storage/storage.client.interface.js",
+        "default": "./dist/clients/storage/storage.client.interface.mjs"
+      },
+      "default": "./src/clients/storage/storage.client.interface"
+    },
+    "./storage-client/indexed-db": {
+      "production": {
+        "types": "./dist/clients/storage/indexed-db.storage.client.d.ts",
+        "node": "./dist/clients/storage/indexed-db.storage.client.js",
+        "default": "./dist/clients/storage/indexed-db.storage.client.mjs"
+      },
+      "default": "./src/clients/storage/indexed-db.storage.client.ts"
+    },
+    "./storage-client/local": {
+      "production": {
+        "types": "./dist/clients/storage/local.storage.client.d.ts",
+        "node": "./dist/clients/storage/local.storage.client.js",
+        "default": "./dist/clients/storage/local.storage.client.mjs"
+      },
+      "default": "./src/clients/storage/local.storage.client.ts"
+    },
+    "./storage-client/session": {
+      "production": {
+        "types": "./dist/clients/storage/session.storage.client.d.ts",
+        "node": "./dist/clients/storage/session.storage.client.js",
+        "default": "./dist/clients/storage/session.storage.client.mjs"
+      },
+      "default": "./src/clients/storage/session.storage.client.ts"
+    },
+    "./types/array": {
+      "production": {
+        "types": "./dist/types/array.type.d.ts",
+        "node": "./dist/types/array.type.js",
+        "default": "./dist/types/array.type.mjs"
+      },
+      "default": "./src/types/array.type.ts"
+    },
+    "./types/function": {
+      "production": {
+        "types": "./dist/types/function.type.d.ts",
+        "node": "./dist/types/function.type.js",
+        "default": "./dist/types/function.type.mjs"
+      },
+      "default": "./src/types/function.type.ts"
+    },
+    "./types/number": {
+      "production": {
+        "types": "./dist/types/number.type.d.ts",
+        "node": "./dist/types/number.type.js",
+        "default": "./dist/types/number.type.mjs"
+      },
+      "default": "./src/types/number.type.ts"
+    },
+    "./types/object": {
+      "production": {
+        "types": "./dist/types/object.type.d.ts",
+        "node": "./dist/types/object.type.js",
+        "default": "./dist/types/object.type.mjs"
+      },
+      "default": "./src/types/object.type.ts"
+    },
+    "./types/string": {
+      "production": {
+        "types": "./dist/types/string.type.d.ts",
+        "node": "./dist/types/string.type.js",
+        "default": "./dist/types/string.type.mjs"
+      },
+      "default": "./src/types/string.type.ts"
+    }
+  },
+  "scripts": {
+    "build": "vite build",
+    "lint": "eslint . --max-warnings 0 --report-unused-disable-directives",
+    "test": "vitest"
+  },
+  "dependencies": {
+    "urlcat": "patch:urlcat@npm%3A3.1.0#~/.yarn/patches/urlcat-npm-3.1.0-306b3d4263.patch"
+  },
+  "devDependencies": {
+    "@monorepo/eslint-config": "workspace:*",
+    "@monorepo/typescript-config": "workspace:*",
+    "@types/eslint": "^8.56.5",
+    "@types/node": "^20.12.12",
+    "@vitest/coverage-v8": "^1.6.0",
+    "@vitest/ui": "^1.6.0",
+    "eslint": "^8.57.0",
+    "msw": "^2.3.0",
+    "typescript": "^5.4.5",
+    "vite": "^5.2.11",
+    "vite-plugin-dts": "^3.9.1",
+    "vitest": "^1.6.0"
+  },
+  "peerDependencies": {}
+}

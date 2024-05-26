@@ -1,7 +1,7 @@
 /** @type {import("eslint").Linter.Config} */
 module.exports = {
+  extends: ['@monorepo/eslint-config/library', '@monorepo/eslint-config/json'],
   root: true,
-  extends: ['@monorepo/eslint-config/react', '@monorepo/eslint-config/json'],
   overrides: [
     {
       files: ['*.?(m)js?(x)', '*.?(m)ts?(x)'],

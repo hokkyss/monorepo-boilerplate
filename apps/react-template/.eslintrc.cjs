@@ -4,7 +4,7 @@ module.exports = {
   extends: ['@monorepo/eslint-config/react', '@monorepo/eslint-config/json'],
   overrides: [
     {
-      files: ['*.ts?(x)'],
+      files: ['*.?(m)ts?(x)'],
       parser: '@typescript-eslint/parser',
       parserOptions: {
         project: true,

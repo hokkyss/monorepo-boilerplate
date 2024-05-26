@@ -1,0 +1,8 @@
+{
+  "compilerOptions": {
+    "outDir": "dist"
+  },
+  "exclude": ["node_modules", "dist", "coverage"],
+  "extends": "@monorepo/typescript-config/vite.json",
+  "include": ["src", "turbo", "*.config.mts", "*.config.ts"]
+}
