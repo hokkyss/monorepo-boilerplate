@@ -4,5 +4,5 @@
   },
   "exclude": ["node_modules", "dist"],
   "extends": "@monorepo/typescript-config/react-library.json",
-  "include": ["src", "turbo"]
+  "include": ["src", "turbo", "*.config.mts", "*.config.ts", "*.config.mjs", "*.config.js"]
 }

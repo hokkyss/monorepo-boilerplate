@@ -1,9 +1,24 @@
-import type { PropsWithChildren } from 'react';
+import { type PropsWithChildren, forwardRef, memo } from 'react';
+
+import shallowEqual from '../shallow-equal/shallow-equal';
 
 export type CodeProps = PropsWithChildren<{
   className?: string;
 }>;
 
-export default function Code({ children, className }: CodeProps) {
-  return <code className={className}>{children}</code>;
-}
+const Code = memo(
+  forwardRef<HTMLElement, CodeProps>(({ children, className }, ref) => {
+    return (
+      <code className={className} ref={ref}>
+        {children}
+      </code>
+    );
+  }),
+  ({ ...prevProps }, { ...nextProps }) => {
+    return shallowEqual(prevProps, nextProps);
+  },
+);
+
+Code.displayName = 'Code';
+
+export default Code;

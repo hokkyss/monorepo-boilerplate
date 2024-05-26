@@ -1,3 +1,5 @@
+import Button from '@monorepo/ui/button';
+import shallowEqual from '@monorepo/ui/shallow-equal';
 import { memo } from 'react';
 
 import envConfig from '../../configs/env/env.config';
@@ -22,8 +24,12 @@ i18n.init(() => {
 });
 
 const MainPage = memo(() => {
-  return <div>Main</div>;
-});
+  return (
+    <div>
+      <Button appName="Main">Main</Button>
+    </div>
+  );
+}, shallowEqual);
 
 if (envConfig.env === 'development') {
   MainPage.displayName = `Page: ${routeMap.main}`;

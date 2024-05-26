@@ -1171,10 +1171,15 @@ __metadata:
     "@types/react": "npm:^18.2.61"
     "@types/react-dom": "npm:^18.2.19"
     eslint: "npm:^8.57.0"
+    glob: "npm:^10.4.1"
     lodash: "npm:^4.17.21"
     react: "npm:^18.2.0"
     shallow-equal: "npm:^3.1.0"
     typescript: "npm:^5.3.3"
+    vite: "npm:^5.2.11"
+  peerDependencies:
+    react: ^18
+    react-dom: ^18
   languageName: unknown
   linkType: soft
 
@@ -4786,7 +4791,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"glob@npm:^10.2.2, glob@npm:^10.3.10":
+"glob@npm:^10.2.2, glob@npm:^10.3.10, glob@npm:^10.4.1":
   version: 10.4.1
   resolution: "glob@npm:10.4.1"
   dependencies:
@@ -8663,7 +8668,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite@npm:^5.2.0":
+"vite@npm:^5.2.0, vite@npm:^5.2.11":
   version: 5.2.11
   resolution: "vite@npm:5.2.11"
   dependencies:

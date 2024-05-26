@@ -36,13 +36,11 @@ export default defineConfig((configEnv) => {
         transformMixedEsModules: true,
       },
       emptyOutDir: true,
-      outDir: '../../dist/apps/react-template',
       reportCompressedSize: true,
       rollupOptions: {
         plugins: [jsxInJs([])],
       },
     },
-    cacheDir: '../../node_modules/.vite/react-template',
     css: {
       lightningcss: {
         cssModules: {
@@ -74,11 +72,11 @@ export default defineConfig((configEnv) => {
           memo: true,
           ref: true,
           svgProps: {
-            className: '{props.className ?? props.class ?? undefined}',
-            color: "{props.color ?? 'currentColor'}",
-            fill: "{props.fill ?? 'currentColor'}",
+            color: 'none',
+            fill: 'none',
             role: 'img',
           },
+          titleProp: true,
         },
       }),
       TanStackRouterVite({
@@ -90,9 +88,5 @@ export default defineConfig((configEnv) => {
       }),
     ],
     root: __dirname,
-    // Uncomment this if you are using workers.
-    // worker: {
-    //  plugins: [ nxViteTsPaths() ],
-    // },
   };
 });

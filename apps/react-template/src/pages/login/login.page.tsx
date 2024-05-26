@@ -1,3 +1,5 @@
+import Button from '@monorepo/ui/button';
+import Code from '@monorepo/ui/code';
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -25,7 +27,12 @@ i18n.init(() => {
 const LoginPage = memo(() => {
   const [t] = useTranslation(routeMap.login);
 
-  return <div>{t('login')}</div>;
+  return (
+    <div>
+      <Button appName="Login">{t('login')}</Button>
+      <Code>Code</Code>
+    </div>
+  );
 });
 
 if (envConfig.env === 'development') {

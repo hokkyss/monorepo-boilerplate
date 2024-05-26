@@ -7,7 +7,8 @@
       "production": {
         "types": "./dist/button/button.d.ts",
         "react-server": "./dist/button/button.react-server.js",
-        "default": "./dist/button/button.js"
+        "node": "./dist/button/button.js",
+        "default": "./dist/button/button.mjs"
       },
       "react-server": "./src/button/button.react-server.tsx",
       "default": "./src/button/button.tsx"
@@ -16,7 +17,8 @@
       "production": {
         "types": "./dist/card/card.d.ts",
         "react-server": "./dist/card/card.react-server.js",
-        "default": "./dist/card/card.js"
+        "node": "./dist/card/card.js",
+        "default": "./dist/card/card.mjs"
       },
       "react-server": "./src/card/card.react-server.tsx",
       "default": "./src/card/card.tsx"
@@ -25,70 +27,79 @@
       "production": {
         "types": "./dist/code/code.d.ts",
         "react-server": "./dist/code/code.react-server.js",
-        "default": "./dist/code/code.js"
+        "node": "./dist/code/code.js",
+        "default": "./dist/code/code.mjs"
       },
       "react-server": "./src/code/code.react-server.tsx",
       "default": "./src/code/code.tsx"
     },
     "./shallow-equal": {
       "production": {
-        "types": "./dist/shallow-equal.d.ts",
-        "default": "./dist/shallow-equal.js"
+        "types": "./dist/shallow-equal/shallow-equal.d.ts",
+        "node": "./dist/shallow-equal/shallow-equal.js",
+        "default": "./dist/shallow-equal/shallow-equal.mjs"
       },
-      "default": "./src/shallow-equal/shallow-equal.tsx"
+      "default": "./src/shallow-equal/shallow-equal.ts"
     },
     "./use-boolean": {
       "production": {
-        "types": "./dist/use-boolean.d.ts",
-        "default": "./dist/use-boolean.js"
+        "types": "./dist/use-boolean/use-boolean.d.ts",
+        "node": "./dist/use-boolean/use-boolean.js",
+        "default": "./dist/use-boolean/use-boolean.mjs"
       },
       "default": "./src/use-boolean/use-boolean.tsx"
     },
     "./use-interval": {
       "production": {
-        "types": "./dist/use-interval.d.ts",
-        "default": "./dist/use-interval.js"
+        "types": "./dist/use-interval/use-interval.d.ts",
+        "node": "./dist/use-interval/use-interval.js",
+        "default": "./dist/use-interval/use-interval.mjs"
       },
       "default": "./src/use-interval/use-interval.tsx"
     },
     "./use-is-online": {
       "production": {
-        "types": "./dist/use-is-online.d.ts",
-        "default": "./dist/use-is-online.js"
+        "types": "./dist/use-is-online/use-is-online.d.ts",
+        "node": "./dist/use-is-online/use-is-online.js",
+        "default": "./dist/use-is-online/use-is-online.mjs"
       },
       "default": "./src/use-is-online/use-is-online.tsx"
     },
     "./use-merge-ref": {
       "production": {
-        "types": "./dist/use-merge-ref.d.ts",
-        "default": "./dist/use-merge-ref.js"
+        "types": "./dist/use-merge-ref/use-merge-ref.d.ts",
+        "node": "./dist/use-merge-ref/use-merge-ref.js",
+        "default": "./dist/use-merge-ref/use-merge-ref.mjs"
       },
       "default": "./src/use-merge-ref/use-merge-ref.tsx"
     },
     "./use-previous": {
       "production": {
-        "types": "./dist/use-previous.d.ts",
-        "default": "./dist/use-previous.js"
+        "types": "./dist/use-previous/use-previous.d.ts",
+        "node": "./dist/use-previous/use-previous.js",
+        "default": "./dist/use-previous/use-previous.mjs"
       },
       "default": "./src/use-previous/use-previous.tsx"
     },
     "./use-rerender": {
       "production": {
-        "types": "./dist/use-rerender.d.ts",
-        "default": "./dist/use-rerender.js"
+        "types": "./dist/use-rerender/use-rerender.d.ts",
+        "node": "./dist/use-rerender/use-rerender.js",
+        "default": "./dist/use-rerender/use-rerender.mjs"
       },
       "default": "./src/use-rerender/use-rerender.tsx"
     },
     "./use-timeout": {
       "production": {
-        "types": "./dist/use-timeout.d.ts",
-        "default": "./dist/use-timeout.js"
+        "types": "./dist/use-timeout/use-timeout.d.ts",
+        "node": "./dist/use-timeout/use-timeout.js",
+        "default": "./dist/use-timeout/use-timeout.mjs"
       },
       "default": "./src/use-timeout/use-timeout.tsx"
     }
   },
   "scripts": {
-    "build": "tsc",
+    "build": "tsc && vite build",
     "generate:component": "turbo gen react-component",
     "lint": "eslint . --max-warnings 0 --report-unused-disable-directives",
     "test": ""
@@ -106,8 +117,14 @@
     "@types/react": "^18.2.61",
     "@types/react-dom": "^18.2.19",
     "eslint": "^8.57.0",
+    "glob": "^10.4.1",
     "lodash": "^4.17.21",
     "react": "^18.2.0",
-    "typescript": "^5.3.3"
+    "typescript": "^5.3.3",
+    "vite": "^5.2.11"
+  },
+  "peerDependencies": {
+    "react": "^18",
+    "react-dom": "^18"
   }
 }

@@ -1,5 +1,5 @@
 {
   "exclude": ["node_modules"],
-  "extends": "@monorepo/typescript-config/vite.json",
+  "extends": "@monorepo/typescript-config/vite-react.json",
   "include": ["src", "./*.config.ts", "./*.config.js"]
 }

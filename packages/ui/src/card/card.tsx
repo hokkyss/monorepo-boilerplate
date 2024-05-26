@@ -1,4 +1,6 @@
-import type { ReactNode } from 'react';
+import { type ReactNode, forwardRef, memo } from 'react';
+
+import shallowEqual from '../shallow-equal/shallow-equal';
 
 export type CardProps = {
   children: ReactNode;
@@ -7,18 +9,28 @@ export type CardProps = {
   title: string;
 };
 
-export default function Card({ children, className, href, title }: CardProps) {
-  return (
-    <a
-      className={className}
-      href={`${href}?utm_source=create-turbo&utm_medium=basic&utm_campaign=create-turbo"`}
-      rel="noopener noreferrer"
-      target="_blank"
-    >
-      <h2>
-        {title} <span>-&gt;</span>
-      </h2>
-      <p>{children}</p>
-    </a>
-  );
-}
+const Card = memo(
+  forwardRef<HTMLAnchorElement, CardProps>(({ children, className, href, title }, ref) => {
+    return (
+      <a
+        className={className}
+        href={`${href}?utm_source=create-turbo&utm_medium=basic&utm_campaign=create-turbo"`}
+        ref={ref}
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <h2>
+          {title} <span>-&gt;</span>
+        </h2>
+        <p>{children}</p>
+      </a>
+    );
+  }),
+  (prevProps, nextProps) => {
+    return shallowEqual(prevProps, nextProps);
+  },
+);
+
+Card.displayName = 'Card';
+
+export default Card;
