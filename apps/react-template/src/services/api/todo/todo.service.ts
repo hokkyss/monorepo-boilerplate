@@ -6,7 +6,7 @@ import httpClient from '../../../clients/http/http.client';
 
 function createTodoService(httpClient: IHttpClient) {
   async function listTodo(request: ListTodoRequest, signal?: AbortSignal) {
-    const response = await httpClient.get<ListTodoResponse>('/todos', {
+    const response = await httpClient.get<ListTodoResponse>('https://jsonplaceholder.typicode.com/todos', {
       searchParams: request,
       signal,
     });

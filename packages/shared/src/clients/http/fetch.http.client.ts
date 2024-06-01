@@ -3,17 +3,11 @@ import type IHttpClient from './http.client.interface';
 
 import urlcat from 'urlcat';
 
-export type FetchHttpClientOptions = {
-  baseUrl: string;
-};
-
-export default function createFetchHttpClient(options: FetchHttpClientOptions): IHttpClient {
-  const { baseUrl } = options;
-
+export default function createFetchHttpClient(): IHttpClient {
   async function DELETE<T>(url: string, config: RequestOptions = {}): Promise<T> {
     const { headers = {}, searchParams = {}, signal } = config;
 
-    return fetch(urlcat(baseUrl, url, searchParams), {
+    return fetch(urlcat(url, searchParams), {
       headers,
       method: 'DELETE',
       ...(signal ? { signal } : {}),
@@ -23,7 +17,7 @@ export default function createFetchHttpClient(options: FetchHttpClientOptions): 
   async function GET<T>(url: string, config: RequestOptions = {}): Promise<T> {
     const { headers = {}, searchParams = {}, signal } = config;
 
-    return fetch(urlcat(baseUrl, url, searchParams), {
+    return fetch(urlcat(url, searchParams), {
       headers,
       method: 'GET',
       ...(signal ? { signal } : {}),
@@ -36,7 +30,7 @@ export default function createFetchHttpClient(options: FetchHttpClientOptions): 
     if (body) {
       headers['Content-Type'] = headers['Content-Type'] ?? 'multipart/form-data';
 
-      return fetch(urlcat(baseUrl, url, searchParams), {
+      return fetch(urlcat(url, searchParams), {
         body,
         headers,
         method: 'PATCH',
@@ -47,7 +41,7 @@ export default function createFetchHttpClient(options: FetchHttpClientOptions): 
 
     headers['Content-Type'] = headers['Content-Type'] ?? 'application/json';
 
-    return fetch(urlcat(baseUrl, url, searchParams), {
+    return fetch(urlcat(url, searchParams), {
       body: JSON.stringify(json),
       headers,
       method: 'PATCH',
@@ -61,7 +55,7 @@ export default function createFetchHttpClient(options: FetchHttpClientOptions): 
     if (body) {
       headers['Content-Type'] = headers['Content-Type'] ?? 'multipart/form-data';
 
-      return fetch(urlcat(baseUrl, url, searchParams), {
+      return fetch(urlcat(url, searchParams), {
         body,
         headers,
         method: 'POST',
@@ -72,7 +66,7 @@ export default function createFetchHttpClient(options: FetchHttpClientOptions): 
 
     headers['Content-Type'] = headers['Content-Type'] ?? 'application/json';
 
-    return fetch(urlcat(baseUrl, url, searchParams), {
+    return fetch(urlcat(url, searchParams), {
       body: JSON.stringify(json),
       headers,
       method: 'POST',
@@ -86,7 +80,7 @@ export default function createFetchHttpClient(options: FetchHttpClientOptions): 
     if (body) {
       headers['Content-Type'] = headers['Content-Type'] ?? 'multipart/form-data';
 
-      return fetch(urlcat(baseUrl, url, searchParams), {
+      return fetch(urlcat(url, searchParams), {
         body,
         headers,
         method: 'PUT',
@@ -97,7 +91,7 @@ export default function createFetchHttpClient(options: FetchHttpClientOptions): 
 
     headers['Content-Type'] = headers['Content-Type'] ?? 'application/json';
 
-    return fetch(urlcat(baseUrl, url, searchParams), {
+    return fetch(urlcat(url, searchParams), {
       body: JSON.stringify(json),
       headers,
       method: 'PUT',

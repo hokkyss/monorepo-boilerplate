@@ -1,6 +1,7 @@
 import shallowEqual from '@monorepo/ui/shallow-equal';
 import useBoolean from '@monorepo/ui/use-boolean';
 import { memo } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import envConfig from '../../configs/env/env.config';
 import { Languages, i18n } from '../../configs/locale/locale.config';
@@ -17,23 +18,32 @@ declare module 'i18next' {
   }
 }
 
-i18n.init(() => {
-  i18n
-    .addResourceBundle(Languages.EN, routeMap.main, enTranslation)
-    .addResourceBundle(Languages.ID, routeMap.main, idTranslation)
-    .addResourceBundle(Languages.JA, routeMap.main, jaTranslation);
-});
+i18n
+  .addResourceBundle(Languages.EN, routeMap.main, enTranslation)
+  .addResourceBundle(Languages.ID, routeMap.main, idTranslation)
+  .addResourceBundle(Languages.JA, routeMap.main, jaTranslation);
 
 const MainPage = memo(() => {
   const showTodo = useBoolean(false);
   const todoList = useTodoList({
     enabled: showTodo.value,
   });
+  const { t } = useTranslation(routeMap.main, { i18n });
 
   return (
     <div>
       <button onClick={showTodo.toggle} type="button">
-        Toggle
+        {t('toggle')}
+      </button>
+      Current Language: {i18n.language}
+      <button onClick={() => i18n.changeLanguage(Languages.EN)} type="button">
+        EN
+      </button>
+      <button onClick={() => i18n.changeLanguage(Languages.JA)} type="button">
+        JA
+      </button>
+      <button onClick={() => i18n.changeLanguage(Languages.ID)} type="button">
+        ID
       </button>
       {showTodo.value
         ? todoList.isPending || !todoList.data
