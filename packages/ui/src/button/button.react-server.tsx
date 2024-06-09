@@ -1,10 +1,4 @@
-import type { ReactNode } from 'react';
-
-export type ButtonProps = {
-  appName: string;
-  children: ReactNode;
-  className?: string;
-};
+import type { ButtonProps } from './button.props';
 
 export default function Button({ children, className }: ButtonProps) {
   return (
@@ -13,3 +7,4 @@ export default function Button({ children, className }: ButtonProps) {
     </button>
   );
 }
+export type { ButtonProps };

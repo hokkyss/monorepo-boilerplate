@@ -1,16 +1,9 @@
-import type { CSSProperties } from 'react';
+import type { ButtonProps } from './button.props';
 
 import isEqual from 'lodash/isEqual';
-import { type ReactNode, forwardRef, memo } from 'react';
+import { forwardRef, memo } from 'react';
 
 import shallowEqual from '../shallow-equal/shallow-equal';
-
-export type ButtonProps = {
-  appName: string;
-  children: ReactNode;
-  className?: string;
-  style?: CSSProperties;
-};
 
 const Button = memo(
   forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
@@ -40,3 +33,4 @@ const Button = memo(
 Button.displayName = 'Button';
 
 export default Button;
+export type { ButtonProps };

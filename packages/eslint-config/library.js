@@ -82,8 +82,3 @@ module.exports = {
     },
   ],
 };
-
-require('@vercel/style-guide/eslint/typescript');
-require('eslint-config-alloy/typescript');
-require('eslint-config-alloy/base');
-require('eslint-config-alloy/react');
