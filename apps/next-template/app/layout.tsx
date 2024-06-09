@@ -2,9 +2,12 @@ import './globals.css';
 
 import type { Metadata } from 'next';
 
+import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Inter } from 'next/font/google';
 
 import QueryClientProvider from '../components/providers/query-client.provider';
+import envConfig from '../configs/env/env.config';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -13,11 +16,20 @@ export const metadata: Metadata = {
   title: 'Next Template',
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }): JSX.Element {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <body className={inter.className}>
         <QueryClientProvider>{children}</QueryClientProvider>
+
+        <footer>
+          {(envConfig.isVercel ?? envConfig.isDev) && (
+            <>
+              <SpeedInsights />
+              <Analytics />
+            </>
+          )}
+        </footer>
       </body>
     </html>
   );
