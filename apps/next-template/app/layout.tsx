@@ -7,7 +7,6 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Inter } from 'next/font/google';
 
 import QueryClientProvider from '../components/providers/query-client.provider';
-import envConfig from '../configs/env/env.config';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -23,12 +22,8 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <QueryClientProvider>{children}</QueryClientProvider>
 
         <footer>
-          {(envConfig.isVercel ?? envConfig.isDev) && (
-            <>
-              <SpeedInsights />
-              <Analytics />
-            </>
-          )}
+          <SpeedInsights />
+          <Analytics />
         </footer>
       </body>
     </html>
