@@ -4,22 +4,42 @@ import { useMutation } from '@tanstack/react-query';
 
 import createTodo from '../../../mutations/create-todo.mutation';
 
-export default function useCreateTodo() {
-  const { error, isError, isPending, mutate } = useMutation({
-    mutationFn: (formData: FormData) =>
-      createTodo(formData).then((resp) => {
-        if (resp.success) {
-          return resp.data;
-        }
+type UseCreateTodoProps = {
+  onExecute?: (form: FormData) => void;
+  userId: number;
+};
 
-        throw new Error(resp.error);
-      }),
-  });
-
-  return {
+export default function useCreateTodo({ onExecute, userId }: UseCreateTodoProps) {
+  const {
+    data,
     error,
     isError,
     isPending,
-    mutate,
+    isSuccess,
+    mutate: execute,
+  } = useMutation({
+    mutationFn: (formData: FormData) =>
+      createTodo
+        .bind(
+          null,
+          userId,
+        )(formData)
+        .then((result) => {
+          if (!result.success) {
+            throw new Error(result.error);
+          }
+
+          return result.data;
+        }),
+    onMutate: onExecute,
+  });
+
+  return {
+    data,
+    error,
+    execute,
+    isError,
+    isPending,
+    isSuccess,
   };
 }
