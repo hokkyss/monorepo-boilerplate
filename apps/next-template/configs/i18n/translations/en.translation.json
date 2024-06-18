@@ -1,0 +1,11 @@
+{
+  "home": {
+    "login": "Login",
+    "logout": "Logout",
+    "todo-form": {
+      "body": "Body",
+      "submit": "Submit",
+      "title": "Title"
+    }
+  }
+}

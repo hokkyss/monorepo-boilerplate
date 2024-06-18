@@ -1,5 +1,9 @@
+const createNextIntlPlugin = require('next-intl/plugin');
+
+const withNextIntl = createNextIntlPlugin('./configs/i18n/i18n.config.ts');
+
 /** @type {import('next').NextConfig} */
-module.exports = {
+const nextConfig = {
   basePath: '',
   cleanDistDir: true,
   crossOrigin: 'anonymous',
@@ -35,3 +39,5 @@ module.exports = {
     ignoreBuildErrors: true,
   },
 };
+
+module.exports = withNextIntl(nextConfig);
