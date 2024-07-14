@@ -29,6 +29,9 @@ module.exports = {
     {
       files: ['*.?(m)[tj]s?(x)'],
       extends: [require.resolve('@vercel/style-guide/eslint/react'), 'alloy/react'],
+      rules: {
+        'max-nested-callbacks': 'off',
+      },
     },
   ],
 };

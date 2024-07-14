@@ -6,7 +6,9 @@ import { useTranslation } from 'react-i18next';
 import envConfig from '../../configs/env/env.config';
 import { Languages, i18n } from '../../configs/locale/locale.config';
 import routeMap from '../../configs/route/route-map.config';
+import CounterStoreProvider from '../../providers/counter-store/counter-store.provider';
 
+import Counter from './components/organisms/counter/counter.organism';
 import useTodoList from './hooks/use-todo-list/use-todo-list.hook';
 import enTranslation from './translations/en.translation.json';
 import idTranslation from './translations/id.translation.json';
@@ -32,19 +34,26 @@ const MainPage = memo(() => {
 
   return (
     <div>
-      <button onClick={showTodo.toggle} type="button">
-        {t('toggle')}
-      </button>
-      Current Language: {i18n.language}
-      <button onClick={() => i18n.changeLanguage(Languages.EN)} type="button">
-        EN
-      </button>
-      <button onClick={() => i18n.changeLanguage(Languages.JA)} type="button">
-        JA
-      </button>
-      <button onClick={() => i18n.changeLanguage(Languages.ID)} type="button">
-        ID
-      </button>
+      <div>
+        Current Language: {i18n.language}
+        <button onClick={() => i18n.changeLanguage(Languages.EN)} type="button">
+          EN
+        </button>
+        <button onClick={() => i18n.changeLanguage(Languages.JA)} type="button">
+          JA
+        </button>
+        <button onClick={() => i18n.changeLanguage(Languages.ID)} type="button">
+          ID
+        </button>
+      </div>
+      <CounterStoreProvider initialCount={1}>
+        <Counter />
+      </CounterStoreProvider>
+      <div>
+        <button onClick={showTodo.toggle} type="button">
+          {t('toggle')}
+        </button>
+      </div>
       {showTodo.value
         ? todoList.isPending || !todoList.data
           ? 'Loading...'

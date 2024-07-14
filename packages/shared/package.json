@@ -90,6 +90,15 @@
         "default": "./dist/types/string.type.mjs"
       },
       "default": "./src/types/string.type.ts"
+    },
+    "./utils/invariant": {
+      "default": "./src/utils/invariant.util.ts"
+    },
+    "./utils/is-null": {
+      "default": "./src/utils/is-null.util.ts"
+    },
+    "./utils/is-undefined": {
+      "default": "./src/utils/is-undefined.util.ts"
     }
   },
   "scripts": {
