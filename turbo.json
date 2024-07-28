@@ -1,7 +1,18 @@
 {
   "$schema": "https://turbo.build/schema.json",
   "globalDependencies": ["**/.env.*local", "tsconfig.json"],
-  "globalEnv": ["NODE_ENV", "CI", "VERCEL_*", "VITE_*", "NEXT_PRIVATE_*", "NEXT_PUBLIC_*"],
+  "globalEnv": [
+    "NODE_ENV",
+    "CI",
+    "DATABASE_URL",
+    "NEXTAUTH_*",
+    "VERCEL",
+    "VERCEL_*",
+    "VITE_*",
+    "NEXT_PRIVATE_*",
+    "NEXT_PUBLIC_*",
+    "SKIP_ENV_VALIDATION"
+  ],
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
