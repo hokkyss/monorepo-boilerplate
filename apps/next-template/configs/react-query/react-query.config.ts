@@ -1,11 +1,16 @@
 import type { QueryClientConfig } from '@tanstack/react-query';
 
 import { QueryClient, defaultShouldDehydrateQuery, isServer } from '@tanstack/react-query';
+import SuperJSON from 'superjson';
 
 const queryClientConfig: QueryClientConfig = {
   defaultOptions: {
     dehydrate: {
+      serializeData: SuperJSON.serialize,
       shouldDehydrateQuery: (query) => query.state.status === 'pending' || defaultShouldDehydrateQuery(query),
+    },
+    hydrate: {
+      deserializeData: SuperJSON.deserialize,
     },
     queries: {
       // With SSR, we usually want to set some default staleTime

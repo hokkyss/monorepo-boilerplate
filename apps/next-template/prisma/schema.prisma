@@ -17,6 +17,13 @@ generator client {
   provider = "prisma-client-js"
 }
 
+generator zod {
+  provider          = "prisma-zod-generator"
+  output            = "./zod"
+  isGenerateSelect  = true
+  isGenerateInclude = true
+}
+
 model User {
   id            String          @id @default(cuid())
   name          String?

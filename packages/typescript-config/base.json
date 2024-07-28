@@ -20,6 +20,10 @@
     "skipLibCheck": true,
     "sourceMap": false,
     "strict": true,
+    "strictBindCallApply": true,
+    "strictFunctionTypes": true,
+    "strictNullChecks": true,
+    "strictPropertyInitialization": true,
     "target": "ES2022"
   },
   "display": "Default"

@@ -7,6 +7,7 @@ import NextAuth from 'next-auth';
 
 import databaseConfig from '../database/database.config';
 import envConfig from '../env/env.config';
+import serverEnvConfig from '../env/env.config.server';
 
 const authConfig = NextAuth({
   adapter: PrismaAdapter(databaseConfig),
@@ -25,8 +26,9 @@ const authConfig = NextAuth({
       };
     },
   },
+  debug: envConfig.NODE_ENV === 'development',
   providers: [],
-  secret: envConfig.NEXTAUTH_SECRET,
+  secret: serverEnvConfig.AUTH_SECRET,
 });
 
 export default authConfig;

@@ -6,6 +6,7 @@ import { cookies } from 'next/headers';
 
 import { setRequestLocale } from '../../configs/i18n/i18n.config';
 import getQueryClient from '../../configs/react-query/react-query.config';
+import { trpc } from '../../configs/trpc/server/server';
 import login from '../../mutations/login.mutation';
 import logout from '../../mutations/logout.mutation';
 import listTodoQuery from '../../queries/list-todo.query';
@@ -27,9 +28,11 @@ export default async function HomePage({ params }: { params: HomePageParams }) {
 
   const t = await getTranslations('home');
 
+  const user = await trpc.user.getUser();
+
   return (
     <main>
-      isLoggedIn: {isLoggedIn?.value}
+      isLoggedIn: {isLoggedIn?.value} {user.user}
       <form action={login}>
         <button type="submit">{t('login')}</button>
       </form>

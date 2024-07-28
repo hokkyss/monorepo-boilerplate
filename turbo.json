@@ -4,7 +4,9 @@
   "globalEnv": [
     "NODE_ENV",
     "CI",
+    "PORT",
     "DATABASE_URL",
+    "AUTH_*",
     "NEXTAUTH_*",
     "VERCEL",
     "VERCEL_*",

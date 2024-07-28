@@ -19,10 +19,10 @@
     "@monorepo/ui": "workspace:*",
     "@prisma/client": "^5.17.0",
     "@t3-oss/env-nextjs": "^0.11.0",
-    "@tanstack/react-query": "^5.40.1",
-    "@trpc/client": "^10.45.2",
-    "@trpc/react-query": "^10.45.2",
-    "@trpc/server": "^10.45.2",
+    "@tanstack/react-query": "^5.51.15",
+    "@trpc/client": "^11.0.0-rc.467",
+    "@trpc/react-query": "^11.0.0-rc.467",
+    "@trpc/server": "^11.0.0-rc.467",
     "@vercel/analytics": "^1.3.1",
     "@vercel/speed-insights": "^1.0.11",
     "client-only": "^0.0.1",
@@ -32,6 +32,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "server-only": "^0.0.1",
+    "superjson": "^2.2.1",
     "zod": "^3.23.8"
   },
   "devDependencies": {
@@ -45,6 +46,7 @@
     "@types/react-dom": "^18.2.19",
     "eslint": "^8.57.0",
     "prisma": "^5.17.0",
+    "prisma-zod-generator": "^0.8.13",
     "typescript": "^5.3.3"
   }
 }
