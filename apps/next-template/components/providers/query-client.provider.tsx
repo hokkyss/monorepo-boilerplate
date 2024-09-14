@@ -12,9 +12,10 @@ import dynamic from 'next/dynamic';
 import envConfig from '../../configs/env/env.config';
 import getQueryClient from '../../configs/react-query/react-query.config';
 
-const Devtools = envConfig.isDev
-  ? dynamic(() => import('@tanstack/react-query-devtools').then((mod) => mod.ReactQueryDevtools))
-  : () => null;
+const Devtools =
+  envConfig.NODE_ENV === 'development'
+    ? dynamic(() => import('@tanstack/react-query-devtools').then((mod) => mod.ReactQueryDevtools))
+    : () => null;
 
 export default function QueryClientProvider(props: PropsWithChildren) {
   const { children } = props;
