@@ -7,7 +7,35 @@
     "lint": "eslint . --max-warnings 0 --report-unused-disable-directives"
   },
   "devDependencies": {
-    "eslint": "^8.57.0"
+    "@next/eslint-plugin-next": "^14.2.13",
+    "@types/eslint-plugin-jsx-a11y": "^6",
+    "@vercel/style-guide": "^6.0.0",
+    "eslint": "^8.57.0",
+    "eslint-config-alloy": "^5.1.2",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-config-turbo": "^2.1.2",
+    "eslint-plugin-import": "^2.30.0",
+    "eslint-plugin-jsonc": "^2.16.0",
+    "eslint-plugin-jsx-a11y": "^6.10.0",
+    "eslint-plugin-perfectionist": "^2.10.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-react": "^7.37.0",
+    "eslint-plugin-react-hooks": "^4.6.2",
+    "eslint-plugin-unused-imports": "^4.1.4",
+    "expo": "^51.0.34",
+    "prettier-plugin-packagejson": "^2.5.2"
+  },
+  "peerDependencies": {
+    "@next/eslint-plugin-next": ">= 13",
+    "expo": "*"
+  },
+  "peerDependenciesMeta": {
+    "expo": {
+      "optional": true
+    },
+    "next": {
+      "optional": true
+    }
   },
   "publishConfig": {
     "access": "public"

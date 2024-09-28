@@ -35,5 +35,3 @@ module.exports = {
     },
   ],
 };
-
-require('@vercel/style-guide/eslint/react');
