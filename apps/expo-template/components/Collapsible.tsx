@@ -3,8 +3,6 @@ import { type PropsWithChildren, useState } from 'react';
 import { TouchableOpacity } from 'react-native';
 import { createStyleSheet, useStyles } from 'react-native-unistyles';
 
-import { Colors } from '../constants/colors.constant';
-
 import { ThemedText } from './themed-text';
 import { ThemedView } from './themed-view';
 
@@ -15,7 +13,7 @@ export function Collapsible({ children, title }: { title: string } & PropsWithCh
   return (
     <ThemedView>
       <TouchableOpacity activeOpacity={0.8} onPress={() => setIsOpen((value) => !value)} style={styles.heading}>
-        <Ionicons color={Colors.light.icon} name={isOpen ? 'chevron-down' : 'chevron-forward-outline'} size={18} />
+        <Ionicons color={styles.icon.color} name={isOpen ? 'chevron-down' : 'chevron-forward-outline'} size={18} />
         <ThemedText type="defaultSemiBold">{title}</ThemedText>
       </TouchableOpacity>
       {isOpen && <ThemedView style={styles.content}>{children}</ThemedView>}
@@ -23,7 +21,7 @@ export function Collapsible({ children, title }: { title: string } & PropsWithCh
   );
 }
 
-const stylesheet = createStyleSheet(() => ({
+const stylesheet = createStyleSheet((theme) => ({
   content: {
     marginLeft: 24,
     marginTop: 6,
@@ -32,5 +30,8 @@ const stylesheet = createStyleSheet(() => ({
     alignItems: 'center',
     flexDirection: 'row',
     gap: 6,
+  },
+  icon: {
+    color: theme.colors.typography,
   },
 }));

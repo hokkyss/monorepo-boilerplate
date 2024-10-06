@@ -1,18 +1,19 @@
 import { Tabs } from 'expo-router';
-import React from 'react';
+import { createStyleSheet, useStyles } from 'react-native-unistyles';
 
 import { TabBarIcon } from '../../components/navigation/tab-bar-icon';
-import { Colors } from '../../constants/colors.constant';
-import { useColorScheme } from '../../hooks/use-color-scheme.hook';
 
 export default function TabLayout() {
-  const colorScheme = useColorScheme();
+  const { styles } = useStyles(stylesheet);
 
   return (
     <Tabs
       screenOptions={{
         headerShown: false,
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
+        tabBarActiveBackgroundColor: styles.activeColor.backgroundColor,
+        tabBarActiveTintColor: styles.activeColor.tintColor,
+        tabBarInactiveBackgroundColor: styles.inactiveColor.backgroundColor,
+        tabBarInactiveTintColor: styles.inactiveColor.tintColor,
       }}
     >
       <Tabs.Screen
@@ -34,3 +35,14 @@ export default function TabLayout() {
     </Tabs>
   );
 }
+
+const stylesheet = createStyleSheet((theme) => ({
+  activeColor: {
+    backgroundColor: theme.colors.background,
+    tintColor: theme.colors.typography,
+  },
+  inactiveColor: {
+    backgroundColor: theme.colors.background,
+    tintColor: theme.colors.typography,
+  },
+}));

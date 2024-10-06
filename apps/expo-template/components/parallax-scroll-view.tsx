@@ -1,7 +1,8 @@
 import type { PropsWithChildren, ReactElement } from 'react';
 
-import { StyleSheet, useColorScheme } from 'react-native';
+import { useColorScheme } from 'react-native';
 import Animated, { interpolate, useAnimatedRef, useAnimatedStyle, useScrollViewOffset } from 'react-native-reanimated';
+import { createStyleSheet, useStyles } from 'react-native-unistyles';
 
 import { ThemedView } from './themed-view';
 
@@ -16,6 +17,7 @@ export default function ParallaxScrollView({ children, headerBackgroundColor, he
   const colorScheme = useColorScheme() ?? 'light';
   const scrollRef = useAnimatedRef<Animated.ScrollView>();
   const scrollOffset = useScrollViewOffset(scrollRef);
+  const { styles } = useStyles(stylesheet);
 
   const headerAnimatedStyle = useAnimatedStyle(() => {
     return {
@@ -48,7 +50,7 @@ export default function ParallaxScrollView({ children, headerBackgroundColor, he
   );
 }
 
-const styles = StyleSheet.create({
+const stylesheet = createStyleSheet(() => ({
   container: {
     flex: 1,
   },
@@ -62,4 +64,4 @@ const styles = StyleSheet.create({
     height: 250,
     overflow: 'hidden',
   },
-});
+}));

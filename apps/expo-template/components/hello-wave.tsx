@@ -1,4 +1,3 @@
-import { StyleSheet } from 'react-native';
 import Animated, {
   useAnimatedStyle,
   useSharedValue,
@@ -6,10 +5,12 @@ import Animated, {
   withSequence,
   withTiming,
 } from 'react-native-reanimated';
+import { createStyleSheet, useStyles } from 'react-native-unistyles';
 
 import { ThemedText } from './themed-text';
 
 export function HelloWave() {
+  const { styles } = useStyles(stylesheet);
   const rotationAnimation = useSharedValue(0);
 
   rotationAnimation.value = withRepeat(
@@ -28,10 +29,10 @@ export function HelloWave() {
   );
 }
 
-const styles = StyleSheet.create({
+const stylesheet = createStyleSheet(() => ({
   text: {
     fontSize: 28,
     lineHeight: 32,
     marginTop: -6,
   },
-});
+}));

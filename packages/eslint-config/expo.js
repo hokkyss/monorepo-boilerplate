@@ -25,4 +25,12 @@ module.exports = {
     '.*.js',
     'node_modules/',
   ],
+  overrides: [
+    {
+      files: ['*.?(m)[tj]s?(x)'],
+      rules: {
+        'react/no-unstable-nested-components': ['error', { allowAsProps: true }],
+      },
+    },
+  ],
 };

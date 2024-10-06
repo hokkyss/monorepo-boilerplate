@@ -1,20 +1,17 @@
-import { StyleSheet, Text, type TextProps } from 'react-native';
-
-import useThemeColor from '../hooks/use-theme-color.hook';
+import { Text, type TextProps } from 'react-native';
+import { createStyleSheet, useStyles } from 'react-native-unistyles';
 
 export type ThemedTextProps = {
-  darkColor?: string;
-  lightColor?: string;
   type?: 'default' | 'defaultSemiBold' | 'link' | 'subtitle' | 'title';
 } & TextProps;
 
-export function ThemedText({ darkColor, lightColor, style, type = 'default', ...rest }: ThemedTextProps) {
-  const color = useThemeColor({ dark: darkColor, light: lightColor }, 'text');
+export function ThemedText({ style, type = 'default', ...rest }: ThemedTextProps) {
+  const { styles } = useStyles(stylesheet);
 
   return (
     <Text
       style={[
-        { color },
+        styles.shared,
         type === 'default' ? styles.default : undefined,
         type === 'title' ? styles.title : undefined,
         type === 'defaultSemiBold' ? styles.defaultSemiBold : undefined,
@@ -27,7 +24,7 @@ export function ThemedText({ darkColor, lightColor, style, type = 'default', ...
   );
 }
 
-const styles = StyleSheet.create({
+const stylesheet = createStyleSheet((theme) => ({
   default: {
     fontSize: 16,
     lineHeight: 24,
@@ -42,6 +39,9 @@ const styles = StyleSheet.create({
     fontSize: 16,
     lineHeight: 30,
   },
+  shared: {
+    color: theme.colors.typography,
+  },
   subtitle: {
     fontSize: 20,
     fontWeight: 'bold',
@@ -51,4 +51,4 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     lineHeight: 32,
   },
-});
+}));

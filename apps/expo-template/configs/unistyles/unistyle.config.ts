@@ -1,5 +1,7 @@
 import { UnistylesRegistry } from 'react-native-unistyles';
 
+import palette from './palette.config';
+
 const breakpoints = {
   lg: 992,
   md: 768,
@@ -12,8 +14,8 @@ const breakpoints = {
 
 const lightTheme = {
   colors: {
-    background: '#ffffff',
-    typography: '#000000',
+    background: palette.grey[0],
+    typography: palette.grey[900],
   },
   margins: {
     lg: 8,
@@ -21,12 +23,13 @@ const lightTheme = {
     sm: 2,
     xl: 12,
   },
+  mode: 'light',
 } as const;
 
 const darkTheme = {
   colors: {
-    background: '#000000',
-    typography: '#ffffff',
+    background: palette.grey[900],
+    typography: palette.grey[0],
   },
   margins: {
     lg: 8,
@@ -34,6 +37,7 @@ const darkTheme = {
     sm: 2,
     xl: 12,
   },
+  mode: 'dark',
 } as const;
 
 type AppBreakpoints = typeof breakpoints;
