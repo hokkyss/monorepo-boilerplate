@@ -17,7 +17,20 @@
     },
     "name": "expo-template",
     "orientation": "portrait",
-    "plugins": ["expo-router"],
+    "plugins": [
+      "expo-router",
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "newArchEnabled": true
+          },
+          "ios": {
+            "newArchEnabled": true
+          }
+        }
+      ]
+    ],
     "scheme": "myapp",
     "slug": "expo-template",
     "splash": {

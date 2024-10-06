@@ -6832,7 +6832,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ajv@npm:^8.0.0, ajv@npm:^8.9.0":
+"ajv@npm:^8.0.0, ajv@npm:^8.11.0, ajv@npm:^8.9.0":
   version: 8.17.1
   resolution: "ajv@npm:8.17.1"
   dependencies:
@@ -10168,6 +10168,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"expo-build-properties@npm:~0.12.5":
+  version: 0.12.5
+  resolution: "expo-build-properties@npm:0.12.5"
+  dependencies:
+    ajv: "npm:^8.11.0"
+    semver: "npm:^7.6.0"
+  peerDependencies:
+    expo: "*"
+  checksum: 10c0/1418c94d97cc5c5ecb5ec947ca7eb218bb3d14a5c7127c6acaf9f763af5060df6e581e90b7ec210cdf4fb16d676f58500414127375b2e169646c66b5bd79e9cc
+  languageName: node
+  linkType: hard
+
 "expo-constants@npm:~16.0.0, expo-constants@npm:~16.0.2":
   version: 16.0.2
   resolution: "expo-constants@npm:16.0.2"
@@ -10451,6 +10463,7 @@ __metadata:
     eslint-plugin-react-hooks: "npm:^4.6.2"
     eslint-plugin-unused-imports: "npm:^4.1.4"
     expo: "npm:~51.0.36"
+    expo-build-properties: "npm:~0.12.5"
     expo-constants: "npm:~16.0.2"
     expo-dev-client: "npm:~4.0.27"
     expo-doctor: "npm:^1.10.1"
