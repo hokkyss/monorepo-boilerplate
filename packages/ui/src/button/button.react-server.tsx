@@ -1,10 +1,12 @@
-import type { ButtonProps } from './button.props';
+import type { ButtonHTMLAttributes, DOMAttributes, DetailedHTMLProps, PropsWithChildren } from 'react';
 
-export default function Button({ children, className }: ButtonProps) {
-  return (
-    <button className={className} type="button">
-      {children}
-    </button>
-  );
+export type ButtonProps = PropsWithChildren<
+  Omit<
+    DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>,
+    keyof DOMAttributes<HTMLButtonElement>
+  >
+>;
+
+export default function Button(props: ButtonProps) {
+  return <button {...props} />;
 }
-export type { ButtonProps };

@@ -1,8 +1,7 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
   "compilerOptions": {
-    "moduleResolution": "NodeNext",
     "strict": true
   },
-  "extends": ["./base.json", "expo/tsconfig.base"]
+  "extends": ["./base.json", "expo/tsconfig.base", "@tsconfig/react-native/tsconfig.json"]
 }

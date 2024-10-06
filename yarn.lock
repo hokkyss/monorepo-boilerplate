@@ -3110,6 +3110,7 @@ __metadata:
   dependencies:
     "@babel/preset-react": "npm:^7.24.7"
     "@next/eslint-plugin-next": "npm:^14.2.13"
+    "@tsconfig/react-native": "npm:^3.0.5"
     "@types/eslint-plugin-jsx-a11y": "npm:^6"
     "@vercel/style-guide": "npm:^6.0.0"
     eslint: "npm:^8.57.0"
@@ -3171,7 +3172,8 @@ __metadata:
     happy-dom: "npm:^14.11.0"
     lodash: "npm:^4.17.21"
     prettier-plugin-packagejson: "npm:^2.5.2"
-    react: "npm:^18.2.0"
+    react: "npm:^18.3.1"
+    react-dom: "npm:^18.3.1"
     shallow-equal: "npm:^3.1.0"
     typescript: "npm:^5.3.3"
     vite: "npm:^5.2.11"
@@ -3180,6 +3182,7 @@ __metadata:
   peerDependencies:
     react: ^18
     react-dom: ^18
+    react-native: ">= 0.69"
   languageName: unknown
   linkType: soft
 
@@ -5356,6 +5359,13 @@ __metadata:
   version: 1.0.4
   resolution: "@tsconfig/node16@npm:1.0.4"
   checksum: 10c0/05f8f2734e266fb1839eb1d57290df1664fe2aa3b0fdd685a9035806daa635f7519bf6d5d9b33f6e69dd545b8c46bd6e2b5c79acb2b1f146e885f7f11a42a5bb
+  languageName: node
+  linkType: hard
+
+"@tsconfig/react-native@npm:^3.0.5":
+  version: 3.0.5
+  resolution: "@tsconfig/react-native@npm:3.0.5"
+  checksum: 10c0/a82a69b11c1427859ccc70be42b6c348f5829b9066e45c1d281270fc29bfb70949fdbc236d55282f533468ecc621e5ce6df181928094686271ffea3584c0e8e6
   languageName: node
   linkType: hard
 
@@ -10275,6 +10285,7 @@ __metadata:
     react-native-reanimated: "npm:~3.10.1"
     react-native-safe-area-context: "npm:4.10.5"
     react-native-screens: "npm:3.31.1"
+    react-native-unistyles: "npm:^2.9.2"
     react-native-web: "npm:~0.19.10"
     react-test-renderer: "npm:18.2.0"
     typescript: "npm:~5.3.3"
@@ -15995,7 +16006,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-dom@npm:^18.2.0":
+"react-dom@npm:^18.2.0, react-dom@npm:^18.3.1":
   version: 18.3.1
   resolution: "react-dom@npm:18.3.1"
   dependencies:
@@ -16140,6 +16151,27 @@ __metadata:
     react: "*"
     react-native: "*"
   checksum: 10c0/899a02751ecbc6231ce3c869268fb510e5b53428c788135ae46f4bbd768efe78bf74f17fec5becc4c4c1e81a5f224a907dc890ba2406181ff9e21830dda95dec
+  languageName: node
+  linkType: hard
+
+"react-native-unistyles@npm:^2.9.2":
+  version: 2.9.2
+  resolution: "react-native-unistyles@npm:2.9.2"
+  peerDependencies:
+    "@react-native/normalize-colors": "*"
+    react: "*"
+    react-native: "*"
+    react-native-macos: "*"
+    react-native-web: "*"
+    react-native-windows: "*"
+  peerDependenciesMeta:
+    react-native-macos:
+      optional: true
+    react-native-web:
+      optional: true
+    react-native-windows:
+      optional: true
+  checksum: 10c0/25ffb726bcc6935f5f74500284f437f20361788f89c6df06526f46a63c4e14a738bd6f4ca11664e74c1141ca69461f22e0288aedeb362e3195d1d0cd6d0bcf8d
   languageName: node
   linkType: hard
 
@@ -16309,7 +16341,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react@npm:^18.2.0":
+"react@npm:^18.2.0, react@npm:^18.3.1":
   version: 18.3.1
   resolution: "react@npm:18.3.1"
   dependencies:

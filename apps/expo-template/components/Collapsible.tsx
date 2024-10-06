@@ -1,23 +1,21 @@
 import Ionicons from '@expo/vector-icons/Ionicons';
-import { PropsWithChildren, useState } from 'react';
-import { StyleSheet, TouchableOpacity, useColorScheme } from 'react-native';
+import { type PropsWithChildren, useState } from 'react';
+import { TouchableOpacity } from 'react-native';
+import { createStyleSheet, useStyles } from 'react-native-unistyles';
 
-import { ThemedText } from '../components/ThemedText';
-import { ThemedView } from '../components/ThemedView';
-import { Colors } from '../constants/Colors';
+import { Colors } from '../constants/colors.constant';
 
-export function Collapsible({ children, title }: PropsWithChildren & { title: string }) {
+import { ThemedText } from './themed-text';
+import { ThemedView } from './themed-view';
+
+export function Collapsible({ children, title }: { title: string } & PropsWithChildren) {
   const [isOpen, setIsOpen] = useState(false);
-  const theme = useColorScheme() ?? 'light';
+  const { styles } = useStyles(stylesheet);
 
   return (
     <ThemedView>
-      <TouchableOpacity style={styles.heading} onPress={() => setIsOpen((value) => !value)} activeOpacity={0.8}>
-        <Ionicons
-          name={isOpen ? 'chevron-down' : 'chevron-forward-outline'}
-          size={18}
-          color={theme === 'light' ? Colors.light.icon : Colors.dark.icon}
-        />
+      <TouchableOpacity activeOpacity={0.8} onPress={() => setIsOpen((value) => !value)} style={styles.heading}>
+        <Ionicons color={Colors.light.icon} name={isOpen ? 'chevron-down' : 'chevron-forward-outline'} size={18} />
         <ThemedText type="defaultSemiBold">{title}</ThemedText>
       </TouchableOpacity>
       {isOpen && <ThemedView style={styles.content}>{children}</ThemedView>}
@@ -25,14 +23,14 @@ export function Collapsible({ children, title }: PropsWithChildren & { title: st
   );
 }
 
-const styles = StyleSheet.create({
+const stylesheet = createStyleSheet(() => ({
+  content: {
+    marginLeft: 24,
+    marginTop: 6,
+  },
   heading: {
-    flexDirection: 'row',
     alignItems: 'center',
+    flexDirection: 'row',
     gap: 6,
   },
-  content: {
-    marginTop: 6,
-    marginLeft: 24,
-  },
-});
+}));
