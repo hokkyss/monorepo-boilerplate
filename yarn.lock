@@ -10481,8 +10481,8 @@ __metadata:
     react-dom: "npm:18.2.0"
     react-native: "npm:0.74.5"
     react-native-gesture-handler: "npm:~2.16.1"
+    react-native-keyboard-controller: "npm:^1.14.0"
     react-native-reanimated: "npm:~3.10.1"
-    react-native-safe-area-context: "npm:4.10.5"
     react-native-screens: "npm:3.31.1"
     react-native-unistyles: "npm:^2.9.2"
     react-native-web: "npm:~0.19.10"
@@ -16335,6 +16335,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-native-keyboard-controller@npm:^1.14.0":
+  version: 1.14.0
+  resolution: "react-native-keyboard-controller@npm:1.14.0"
+  peerDependencies:
+    react: "*"
+    react-native: "*"
+    react-native-reanimated: ">=3.0.0"
+  checksum: 10c0/2c976e88444fa4f312d1247f9270c95dcbd0e9f6fd5b63a5e8d554ed7365aec40c460c4ab04dffc9789927cf5e14261e58d2a3b26b475b1948af69cb7f3095f3
+  languageName: node
+  linkType: hard
+
 "react-native-reanimated@npm:~3.10.1":
   version: 3.10.1
   resolution: "react-native-reanimated@npm:3.10.1"
@@ -16352,16 +16363,6 @@ __metadata:
     react: "*"
     react-native: "*"
   checksum: 10c0/0154123649214bd8a83710056594590d9b5f073c5f8911f5b59a0a4f5dcca671d98b475bc4f3bb106b6c8b5c3dcb645a4973efdbe8dbd997bfae2797bd83f546
-  languageName: node
-  linkType: hard
-
-"react-native-safe-area-context@npm:4.10.5":
-  version: 4.10.5
-  resolution: "react-native-safe-area-context@npm:4.10.5"
-  peerDependencies:
-    react: "*"
-    react-native: "*"
-  checksum: 10c0/b385d07ad0bd8400f957e458cf9f715312ccfe00db0c0806831a419f44fbe1eef5004c7d007156db8bc235f738880d2467d89e334ab585c682d38c0c8635c7f1
   languageName: node
   linkType: hard
 

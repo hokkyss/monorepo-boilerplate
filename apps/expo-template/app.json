@@ -23,6 +23,7 @@
         "expo-build-properties",
         {
           "android": {
+            "extraProguardRules": "-keep class com.unistyles.** { *; }",
             "newArchEnabled": true
           },
           "ios": {
